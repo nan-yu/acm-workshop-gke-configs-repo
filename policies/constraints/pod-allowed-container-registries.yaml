@@ -1,0 +1,22 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sAllowedRepos
+metadata:
+  name: pod-allowed-container-registries
+spec:
+  enforcementAction: deny
+  match:
+    kinds:
+    - apiGroups:
+      - ""
+      kinds:
+      - Pod
+  parameters:
+    repos:
+    - auto
+    - gcr.io
+    - k8s.gcr.io
+    - gke.gcr.io
+    - us-docker.pkg.dev/google-samples/containers/gke/whereami
+    - gcr.io/google-samples/microservices-demo
+    - busybox #not ideal, but temporary (loadgenerator's initContainer)
+    #- us-east4-docker.pkg.dev/acm-workshop-742-tenant/
