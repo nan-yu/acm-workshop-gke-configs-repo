@@ -1,0 +1,8 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: whereami
+  namespace: asm-ingress
+spec:
+  domains:
+    - "whereami.endpoints.acm-workshop-742-tenant.cloud.goog"
