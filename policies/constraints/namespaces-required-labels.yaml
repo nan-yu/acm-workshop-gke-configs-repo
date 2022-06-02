@@ -3,7 +3,7 @@ kind: K8sRequireNamespaceNetworkPolicies
 metadata:
   name: namespaces-required-networkpolicies
 spec:
-  enforcementAction: dryrun
+  enforcementAction: deny
   match:
     kinds:
     - apiGroups:
@@ -16,7 +16,6 @@ spec:
     - default
     - gatekeeper-system
     - istio-system
-    - istio-config
     - kube-node-lease
     - kube-public
     - kube-system
