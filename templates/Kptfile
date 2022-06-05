@@ -1,0 +1,18 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: templates
+upstream:
+  type: git
+  git:
+    repo: https://github.com/mathieu-benoit/acm-workshop-policies
+    directory: /
+    ref: main
+  updateStrategy: resource-merge
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/mathieu-benoit/acm-workshop-policies
+    directory: /
+    ref: main
+    commit: 5e6f7a7a4df372b9e063828c82066eb9b8e22794

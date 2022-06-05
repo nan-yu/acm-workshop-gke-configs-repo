@@ -11,4 +11,4 @@ spec:
       kinds:
       - AuthorizationPolicy
     excludedNamespaces:
-      - asm-ingress
+    - asm-ingress
