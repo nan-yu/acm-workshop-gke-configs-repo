@@ -13,6 +13,12 @@ jobs:
       - name: install kpt and nomos	
         run: |
           gcloud components install kpt nomos --quiet
+      - name: install gator
+        run: |
+          curl -OL https://github.com/open-policy-agent/gatekeeper/releases/download/v${GATOR_VERSION}/gator-v${GATOR_VERSION}-linux-amd64.tar.gz
+          tar xvf gator-v${GATOR_VERSION}-linux-amd64.tar.gz && rm gator-v${GATOR_VERSION}-linux-amd64.tar.gz
+        env:
+          GATOR_VERSION: 3.8.1
       - name: vet	
         run: |
           nomos vet --path . --no-api-server-check --source-format unstructured
@@ -28,3 +34,8 @@ jobs:
         if: ${{ always() }}
         run: |
           kpt fn eval . --results-dir tmp --image gcr.io/kpt-fn/gatekeeper:v0.2
+      - name: gator test
+        if: ${{ always() }}
+        run: |
+          rm .github/workflows/ci.yml
+          ./gator test -f .
