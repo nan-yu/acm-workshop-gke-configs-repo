@@ -3,7 +3,7 @@ kind: K8sRequireNamespaceNetworkPolicies
 metadata:
   name: namespaces-required-networkpolicies
 spec:
-  enforcementAction: dryrun
+  enforcementAction: warn
   match:
     kinds:
     - apiGroups:
