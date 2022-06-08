@@ -1,0 +1,8 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: acm-workshop
+  namespace: asm-ingress
+spec:
+  domains:
+    - "acm-workshop.alwaysupalwayson.com"

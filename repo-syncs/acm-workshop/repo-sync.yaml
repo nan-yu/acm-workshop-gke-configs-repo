@@ -1,0 +1,13 @@
+apiVersion: configsync.gke.io/v1beta1
+kind: RepoSync
+metadata:
+  name: repo-sync
+  namespace: acm-workshop
+spec:
+  sourceFormat: unstructured
+  git:
+    repo: https://github.com/mathieu-benoit/my-kubernetes-deployments
+    revision: HEAD
+    branch: unstructured-setup
+    dir: acm-workshop
+    auth: none

@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: repo-sync
+  namespace: acm-workshop
+subjects:
+- kind: ServiceAccount
+  name: ns-reconciler-acm-workshop
+  namespace: config-management-system
+roleRef:
+  kind: ClusterRole
+  name: edit
+  apiGroup: rbac.authorization.k8s.io
