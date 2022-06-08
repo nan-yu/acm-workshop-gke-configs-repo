@@ -9,5 +9,5 @@ spec:
     repo: https://github.com/mathieu-benoit/my-kubernetes-deployments
     revision: HEAD
     branch: unstructured-setup
-    dir: test
+    dir: myblog
     auth: none
