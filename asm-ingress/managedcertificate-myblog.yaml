@@ -1,8 +1,8 @@
 apiVersion: networking.gke.io/v1
 kind: ManagedCertificate
 metadata:
-  name: myblog-light
+  name: myblog
   namespace: asm-ingress
 spec:
   domains:
-    - "light.alwaysupalwayson.com"
+    - "alwaysupalwayson.com"
